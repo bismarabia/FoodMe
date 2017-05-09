@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">FoodMe</string>
+    <string name="drinks">wanna drink sth</string>
+
+    <string-array name="drinks_array">
+        <item>Cola</item>
+        <item>Fanta</item>
+        <item>Ayran</item>
+        <item>Ice Tea</item>
+    </string-array>
+
+</resources>

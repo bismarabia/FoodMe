@@ -1,0 +1,10 @@
+<resources>
+    <string-array name="drinks">
+        <item>Select a drink</item>
+        <item>Cola</item>
+        <item>Fanta</item>
+        <item>Ayran</item>
+        <item>Ice Tea</item>
+    </string-array>
+
+</resources>

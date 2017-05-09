@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/food_photo"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="16dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/me" />
+
+        <TextView
+            android:id="@+id/food_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/food_photo"
+            android:text="Lahmacun"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/food_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/food_name"
+            android:layout_toRightOf="@+id/food_photo"
+            android:text="Afiyet Olsun" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
