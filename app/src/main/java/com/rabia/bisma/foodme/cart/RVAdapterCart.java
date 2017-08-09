@@ -18,14 +18,17 @@ import com.rabia.bisma.foodme.R;
 import com.rabia.bisma.foodme.history.PurchaseAdapter;
 import com.rabia.bisma.foodme.menu.RVMenu;
 
+import java.security.cert.Extension;
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
 public class RVAdapterCart extends RecyclerView.Adapter<RVAdapterCart.FoodViewHolder> {
 
     public static List<FoodCart> foodCart;
     private Context context;
-
 
     static class FoodViewHolder extends RecyclerView.ViewHolder {
 
@@ -151,7 +154,6 @@ public class RVAdapterCart extends RecyclerView.Adapter<RVAdapterCart.FoodViewHo
         notifyItemRemoved(adapterPosition);
     }
 
-
     @Override
     public int getItemViewType(int position) {
         if (position == 1) {
@@ -163,74 +165,5 @@ public class RVAdapterCart extends RecyclerView.Adapter<RVAdapterCart.FoodViewHo
         return 1001;
     }
 
-
-
-    private void initializeViews(FoodCart model, final RecyclerView.ViewHolder holder, int position) {
-
-        //((ItemViewHolder)holder).name.setText(model.get);
-    }
-
-    class ItemViewHolder extends RecyclerView.ViewHolder {
-
-        @BindView(R.id.name)
-        TextView name;
-        @BindView(R.id.imageView)
-        ImageView imageView;
-
-        @BindView(R.id.view_list_repo_action_container)
-        View mActionContainer;
-
-        @BindView(R.id.view_list_main_content)
-        View mViewContent;
-
-        public ItemViewHolder(View itemView) {
-            super(itemView);
-            ButterKnife.bind(this, itemView);
-        }
-    }
-
-
-
-    class ItemViewHolderWithRecyclerWidth extends ItemViewHolder {
-
-        @BindView(R.id.view_list_repo_action_delete)
-        View mActionViewDelete;
-
-        public ItemViewHolderWithRecyclerWidth(View itemView) {
-            super(itemView);
-            ButterKnife.bind(this, itemView);
-        }
-
-    }
-
-    class ItemSwipeWithActionWidthViewHolder extends ItemViewHolder implements Extension {
-
-        @BindView(R.id.view_list_repo_action_delete)
-        View mActionViewDelete;
-        @BindView(R.id.view_list_repo_action_update)
-        View mActionViewRefresh;
-
-        public ItemSwipeWithActionWidthViewHolder(View itemView) {
-            super(itemView);
-            ButterKnife.bind(this, itemView);
-        }
-
-        @Override
-        public float getActionWidth() {
-            return mActionContainer.getWidth();
-        }
-    }
-
-    class ItemSwipeWithActionWidthNoSpringViewHolder extends ItemSwipeWithActionWidthViewHolder implements Extension {
-
-        public ItemSwipeWithActionWidthNoSpringViewHolder(View itemView) {
-            super(itemView);
-        }
-
-        @Override
-        public float getActionWidth() {
-            return mActionContainer.getWidth();
-        }
-    }
 
 }

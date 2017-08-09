@@ -4,25 +4,25 @@
       "id": "1",
       "name": "Rabia",
       "password": "V",
-      "credit": 66
+      "credit": 26.0
     },
     {
       "id": "140201210",
       "name": "Nabil",
       "password": "Vase",
-      "credit": 35
+      "credit": 35.0
     },
     {
       "id": "140201211",
       "name": "Aissa",
       "password": "Vade",
-      "credit": 45
+      "credit": 45.0
     },
     {
       "id": "140201212",
       "name": "Rabia",
       "password": "Vafe",
-      "credit": 200
+      "credit": 200.0
     }
   ]
 }

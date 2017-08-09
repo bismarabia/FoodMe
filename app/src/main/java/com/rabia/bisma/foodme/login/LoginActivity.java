@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -23,7 +25,10 @@ import java.util.HashMap;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText usernameET, passwordET;
+    String[] usernames;
+
+    AutoCompleteTextView usernameET;
+    EditText passwordET;
     public static String username;
     public static String password;
     public static ArrayList<HashMap<String, String>> std_list;
@@ -34,11 +39,16 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.login_activity);
 
         Button login_btn = (Button) findViewById(R.id.login_btn);
-        usernameET = (EditText) findViewById(R.id.username);
+        usernameET = (AutoCompleteTextView) findViewById(R.id.username);
         passwordET = (EditText) findViewById(R.id.password);
 
         std_list = loadJSONFromAsset();
         final HashMap<String, String> user_input = new HashMap<>();
+
+        ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, usernames);
+        usernameET.setThreshold(1);
+        usernameET.setAdapter(adapter);
 
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +86,8 @@ public class LoginActivity extends AppCompatActivity {
             std_list = new ArrayList<>();
             HashMap<String, String> userFromJson;
 
+            usernames = new String[array_students.length()];
+
             for (int i = 0; i < array_students.length(); i++) {
                 JSONObject std_object = array_students.getJSONObject(i);
                 String std_id = std_object.getString("id");
@@ -86,6 +98,8 @@ public class LoginActivity extends AppCompatActivity {
                 userFromJson.put("id", std_id);
                 userFromJson.put("password", std_password);
                 std_list.add(userFromJson);
+
+                usernames[i] = std_id;
             }
         } catch (JSONException | IOException e) {
             e.printStackTrace();

@@ -44,8 +44,8 @@ public class RVMenu extends AppCompatActivity implements RVAdapterMenu.AdapterCa
 
         setContentView(R.layout.menu_rv_activity);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Menu");
+//        ActionBar actionBar = getSupportActionBar();
+//        actionBar.setTitle("Menu");
 
         food = new ArrayList<>();
         adapter = new RVAdapterMenu(RVMenu.this, food, this);

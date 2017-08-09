@@ -34,6 +34,13 @@ import com.rabia.bisma.foodme.login.LoginActivity;
 import com.rabia.bisma.foodme.menu.Food;
 import com.rabia.bisma.foodme.menu.RVAdapterMenu;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -67,7 +74,7 @@ public class RVCart extends AppCompatActivity {
         actionBar.setTitle("My Cart");
 
         //get user's info
-        String username = LoginActivity.username;
+        final String username = LoginActivity.username;
         String password = LoginActivity.password;
         HashMap<String, String> user = new HashMap<>();
         ArrayList<HashMap<String, String>> allUsers = LoginActivity.std_list;
@@ -113,6 +120,31 @@ public class RVCart extends AppCompatActivity {
                             getApplicationContext(),
                             String.valueOf(totalPrice) + " TL",
                             Toast.LENGTH_SHORT).show();
+                    JSONArray arr;
+                    try {
+                        InputStream is = getAssets().open("students_info.json");
+                        int size = is.available();
+                        byte[] buffer = new byte[size];
+                        is.read(buffer);
+                        is.close();
+
+                        arr = new JSONObject(new String(buffer, "UTF-8")).getJSONArray("students_loginInfo");
+                        for (int i = 0; i < arr.length(); i++) {
+                            JSONObject jsonObj = (JSONObject) arr.get(i); // get the josn object
+                            if (jsonObj.getString("id").equals(username)) { // compare for the key-value
+                                double current_credit = jsonObj.getDouble("credit");
+                                double net = current_credit - totalPrice;
+                                Toast.makeText(getApplicationContext(), "" + net, Toast.LENGTH_SHORT).show();
+                                if (net >= 0)
+                                    ((JSONObject) arr.get(i)).put("credit", net); // put the new value for the key
+                                else
+                                    Toast.makeText(getApplicationContext(), "Credit Not Enough!", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    } catch (JSONException | IOException e) {
+                        e.printStackTrace();
+                    }
+
                     for (int i = 0; i < foodCart.size(); i++) {
                         purchaseHistList.add(new History(
                                 foodCart.get(i).name,
