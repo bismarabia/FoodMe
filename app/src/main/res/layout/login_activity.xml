@@ -5,31 +5,34 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@drawable/background"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     android:weightSum="6"
-    tools:context="com.rabia.bisma.foodme.LoginActivity">
+    tools:context="com.rabia.bisma.foodme.login.LoginActivity">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
-        android:orientation="vertical">
+        android:layout_weight="5">
 
-        <ImageView
+        <android.support.v7.widget.AppCompatImageView
             android:id="@+id/imageView"
-            android:layout_width="220dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="120dp"
-            app:srcCompat="@drawable/logo" />
+            android:layout_margin="20dp"
+            android:padding="45dp"
+            app:srcCompat="@drawable/mood_cafe" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:orientation="vertical">
 
         <EditText
@@ -42,30 +45,43 @@
             android:background="@drawable/shape"
             android:drawableLeft="@drawable/locked"
             android:drawablePadding="10dp"
-            android:ellipsize="end"
-            android:ems="10"
-            android:hint="Username"
-            android:inputType="textPersonName"
-            android:textColor="@android:color/black"
-            android:textColorHint="#858585" />
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/shape"
-            android:drawableLeft="@drawable/locked"
-            android:drawablePadding="10dp"
             android:drawableStart="@drawable/locked"
             android:ellipsize="end"
             android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"
+            android:hint="username"
+            android:inputType="textPersonName"
+            android:paddingBottom="08dp"
             android:textColor="@android:color/black"
             android:textColorHint="#858585" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            app:hintEnabled="false">
+
+            <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/shape"
+                android:drawableLeft="@drawable/locked"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/locked"
+                android:ellipsize="end"
+                android:ems="10"
+                android:hint="password"
+                android:inputType="textPassword"
+                android:paddingBottom="08dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="#858585"
+                app:drawable_hide="@drawable/eye_hide"
+                app:drawable_show="@drawable/eye_show"
+                app:paddingStart="15dp"
+                app:tint_color="#ff00" />
+        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/login_btn"
@@ -75,6 +91,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/shape_button"
+            android:paddingBottom="5dp"
             android:text="Buyurun"
             android:textAlignment="center"
             android:textSize="25sp" />
@@ -83,8 +100,9 @@
             android:id="@+id/psw_forgot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="Forgot Password ?!"
+            android:text="Forgot Password ?! It's ok..get it back"
             android:textColor="@android:color/black"
             android:textStyle="bold" />
 

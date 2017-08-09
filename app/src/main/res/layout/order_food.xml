@@ -1,38 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/order_food_activity"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".OrderFood">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="190dp"
-
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:background="@drawable/doner"
         android:orientation="horizontal" />
-
-
-    <ImageButton
-        android:id="@+id/fab"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_alignBottom="@id/header"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="-32dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/rounded_button"
-        android:elevation="1dp"
-        android:src="@drawable/wallet" />
 
     <LinearLayout
         android:id="@+id/body"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/header"
-        android:orientation="vertical"
-        android:background="#E6E6E6">
+        android:background="#eddbdb"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
@@ -44,7 +34,6 @@
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold" />
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -64,15 +53,14 @@
                 android:textStyle="bold" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/drinks_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_weight="1"
-                android:prompt="@string/drinks"
-                android:entries="@array/drinks_array"
-                />
+                android:entries="@array/drinks"
+                android:prompt="@string/drinks" />
         </LinearLayout>
 
         <CheckBox
@@ -85,7 +73,7 @@
             android:text="Mayonnaise?" />
 
         <CheckBox
-            android:id="@+id/ketchap"
+            android:id="@+id/ketchup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
@@ -93,5 +81,18 @@
             android:text="Ketchap?" />
 
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/checkout_orderfood"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="157dp"
+        android:background="@drawable/rounded_button"
+        android:elevation="1dp"
+        android:src="@drawable/wallet" />
 
 </RelativeLayout>

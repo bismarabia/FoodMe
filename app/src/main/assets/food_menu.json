@@ -1,0 +1,34 @@
+{
+  "menu_food": [
+    {
+      "pic_id": "140",
+      "name": "Lahmacun",
+      "price": "6TL"
+    },
+    {
+      "pic_id": "141",
+      "name": "Doner",
+      "price": "5TL"
+    },
+    {
+      "pic_id": "142",
+      "name": "Pizza",
+      "price": "6TL"
+    },
+    {
+      "pic_id": "143",
+      "name": "Durum",
+      "price": "4TL"
+    },
+    {
+      "pic_id": "142",
+      "name": "Tavuk",
+      "price": "5TL"
+    },
+    {
+      "pic_id": "143",
+      "name": "Tost",
+      "price": "3TL"
+    }
+  ]
+}

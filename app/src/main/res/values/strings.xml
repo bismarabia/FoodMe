@@ -8,5 +8,6 @@
         <item>Ayran</item>
         <item>Ice Tea</item>
     </string-array>
+    <string name="title_activity_main">MainActivity</string>
 
 </resources>

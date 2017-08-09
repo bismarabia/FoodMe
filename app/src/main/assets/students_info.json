@@ -1,0 +1,28 @@
+{
+  "students_loginInfo": [
+    {
+      "id": "1",
+      "name": "Rabia",
+      "password": "V",
+      "credit": 66
+    },
+    {
+      "id": "140201210",
+      "name": "Nabil",
+      "password": "Vase",
+      "credit": 35
+    },
+    {
+      "id": "140201211",
+      "name": "Aissa",
+      "password": "Vade",
+      "credit": 45
+    },
+    {
+      "id": "140201212",
+      "name": "Rabia",
+      "password": "Vafe",
+      "credit": 200
+    }
+  ]
+}
