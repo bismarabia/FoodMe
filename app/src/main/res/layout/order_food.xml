@@ -80,6 +80,16 @@
             android:layout_marginStart="40dp"
             android:text="Ketchap?" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ToggleButton" />
+
     </LinearLayout>
 
     <ImageButton

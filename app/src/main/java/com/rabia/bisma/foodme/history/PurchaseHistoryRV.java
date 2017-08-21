@@ -19,7 +19,7 @@ import com.rabia.bisma.foodme.cart.RVCart;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PurchaseHistoryRV extends AppCompatActivity implements PurchaseAdapter.AdapterCallback{
+public class PurchaseHistoryRV extends AppCompatActivity implements PurchaseAdapter.AdapterCallback {
 
     List<History> purchaseHistoryList = new ArrayList<>();
     static RecyclerView recyclerViewPH;
@@ -64,23 +64,22 @@ public class PurchaseHistoryRV extends AppCompatActivity implements PurchaseAdap
             case R.id.empty_cart:
                 if (purchaseadapter.getItemCount() != 0) {
                     AlertDialog.Builder alertDialog = new AlertDialog.Builder(PurchaseHistoryRV.this);
-                    alertDialog.setTitle("Wait...Hold On");
-                    alertDialog.setMessage("Are you sure you want to empty the cart?\nThis is cannot be undone");
-                    alertDialog.setIcon(android.R.drawable.ic_delete);
-                    alertDialog.setPositiveButton("YES",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    purchaseadapter.deleteAll();
-                                }
-                            });
-
-                    alertDialog.setNegativeButton("CANCEL",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    dialog.cancel();
-                                }
-                            });
-                    alertDialog.show();
+                    alertDialog.setTitle("Wait...Hold On")
+                            .setCancelable(false)
+                            .setMessage("Are you sure you want to empty the cart?\nThis is cannot be undone")
+                            .setPositiveButton("YES",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            purchaseadapter.deleteAll();
+                                        }
+                                    })
+                            .setNegativeButton("CANCEL",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.cancel();
+                                        }
+                                    })
+                            .show();
                 }
                 break;
             case android.R.id.home:
